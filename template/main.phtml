@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title><?php echo ($this->pageTitle ?: $this->t('general.page.title')) . ' - ' . $this->config['title']; ?></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="<?php echo $this->cdnhost; ?>asset/css/main.css?v=<?php echo $this->config['version']; ?>">
+
+        <?php if ($this->og): ?>
+            <?php foreach ($this->og as $key => $value): ?>
+                <meta property="og:<?php echo $key; ?>" content="<?php echo $value; ?>" />
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </head>
+    <body class="con-<?php echo $this->request->get('controller'); ?>">
+        <?php echo $this->render('partial/header.phtml'); ?>
+
+        <div class="container-fluid">
+            <?php echo $this->render($this->template); ?>
+        </div>
+
+        <?php echo $this->render('partial/footer.phtml'); ?>
+
+        <script src="<?php echo $this->cdnhost; ?>asset/js/c/<?php echo $this->request->get('controller'); ?>/a/<?php echo $this->request->get('action'); ?>?v=<?php echo $this->config['version']; ?>"></script>
+    </body>
+</html>

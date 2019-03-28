@@ -1,0 +1,29 @@
+{
+    "name": "hmusche/unixzeit",
+    "description": "Portfolio of tools around the unix timestamp",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Hendrick",
+            "email": "hmusche@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-intl": "*",
+        "hmusche/solsken": "master@dev",
+        "twbs/bootstrap": "^4.3",
+        "components/font-awesome": "^5.4"
+    },
+    "repositories": [
+        {
+              "url": "git@github.com:hmusche/solsken.git",
+              "type": "vcs"
+        }
+    ],
+
+	"autoload": {
+		"psr-4": {
+			"Unixzeit\\": "src/"
+		}
+	}
+}
